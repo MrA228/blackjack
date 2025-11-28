@@ -12,4 +12,4 @@ def send_message(chat_id: int, text: str):
         "chat_id": chat_id,
         "text": text
     }
-    requests.port(url, json=payload)
+    requests.post(url, json=payload)
