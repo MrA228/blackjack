@@ -12,11 +12,16 @@ async def webhook(request: Request):
     data = await request.json() # read Telegram update Json
     print("Incoming update:", data)
 
+    if "message" not in data:
+        return {"ok": True}
+    
+    message = data["message"]
+
     # extracting CHAT_ID
-    chat_id = data["message"]["chat"]["id"]
+    chat_id = data["chat"]["id"]
 
     # extracting TEXT
-    text = data["message"].get("text", "")
+    text = data.get("text", "")
 
     # echo LOGIC
     if text:
