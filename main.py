@@ -18,10 +18,10 @@ async def webhook(request: Request):
     message = data["message"]
 
     # extracting CHAT_ID
-    chat_id = data["chat"]["id"]
+    chat_id = message["chat"]["id"]
 
     # extracting TEXT
-    text = data.get("text", "")
+    text = message.get("text", "")
 
     # echo LOGIC
     if text:
