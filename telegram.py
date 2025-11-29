@@ -3,7 +3,7 @@ import os
 
 TOKEN = os.getenv("BOT_TOKEN")
 
-API_URL = f"http://api.telegram.org/bot{TOKEN}"
+API_URL = f"https://api.telegram.org/bot{TOKEN}"
 
 def send_message(chat_id: int, text: str):
     """Send a message to a Telegram CHAT"""
